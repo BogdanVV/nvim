@@ -1,3 +1,11 @@
+vim.g.maplocalleader = "\\"
+vim.g.mapleader = " "
+vim.opt.termguicolors = true
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -15,6 +23,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("lazy").setup("plugins", { checker = { enabled = true } })
-require("vim-cfg")
+
+vim.cmd.colorscheme "catppuccin"
 
