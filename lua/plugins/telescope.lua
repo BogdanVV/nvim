@@ -40,9 +40,12 @@ return {
 							".env*",
 							"--glob",
 							".env.template",
-              "-u",
+							"-u",
 						},
 					},
+				},
+				opts = {
+					sorting_strategy = "ascending",
 				},
 			})
 			require("telescope").load_extension("ui-select")
